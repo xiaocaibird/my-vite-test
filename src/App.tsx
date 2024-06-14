@@ -21,7 +21,7 @@ function App() {
             </div>
             <h1>Vite + React</h1>
             <div className="card">
-                密钥: <input value={key} onChange={evt => setKey(evt.currentTarget.value.trim())} />
+                密钥: <input value={key} onChange={evt => setKey(evt.currentTarget.value.trim())} type='password' />
                 <br /><br /><br />原文：<textarea style={{ width: '200px', height: '100px' }} placeholder='输入要编码或解码的原文' value={oriText} onChange={evt => setOriText(evt.target.value.trim())} />
                 <br /><br /><br />译文：<textarea disabled style={{ width: '200px', height: '100px' }} value={resText} />
                 <br /><br /><br />
