@@ -25,12 +25,18 @@ function App() {
                 <br /><br /><br />原文：<textarea style={{ width: '200px', height: '100px' }} placeholder='输入要编码或解码的原文' value={oriText} onChange={evt => setOriText(evt.target.value.trim())} />
                 <br /><br /><br />译文：<textarea disabled style={{ width: '200px', height: '100px' }} value={resText} />
                 <br /><br /><br />
-                <button onClick={() => setResText(Crypto.AES.encrypt(oriText, key).toString())}>编码</button>
-                <button onClick={() => setResText(Crypto.AES.decrypt(oriText, key).toString(Crypto.enc.Utf8))}>解码</button>
+                <button onClick={() => {
+                    setResText('');
+                    setResText(Crypto.AES.encrypt(oriText, key).toString());
+                }}>编码</button>
+                <button onClick={() => {
+                    setResText('');
+                    setResText(Crypto.AES.decrypt(oriText, key).toString(Crypto.enc.Utf8));
+                }}>解码</button>
                 <p>
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
-            </div>
+            </div >
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
